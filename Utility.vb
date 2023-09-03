@@ -14,7 +14,7 @@ Public Class Utility
         'Con.ConnectionString = ""
         'Con.ConnectionString = ""
         Con.Close()
-
+        ' hgnh
         ' If Con.State = ConnectionState.Open Then Con.Close()
         Con.ConnectionString = ConStr
         'ghgh
