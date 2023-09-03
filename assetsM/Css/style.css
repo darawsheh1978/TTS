@@ -1,0 +1,236 @@
+html,body{
+margin:0;
+padding:0;
+height:100%;
+width:100%;
+}
+body{
+  font-family: 'Cairo', sans-serif;
+  color:#737373;
+}
+a{
+transition: all ease-in 0.15s ;
+}
+a:hover{
+text-decoration: none;
+transition: all ease-in 0.15s ;
+
+}
+.bg-transparent{
+background-color: transparent;
+}
+.bg-dark{
+background-color:#0a0a0aed !important;
+}
+.text-orange{
+color:#f17d21 !important;
+}
+
+/*
+green: #92c83e
+dark: #0a0a0aed
+blue: #3573b4
+*/
+
+/*--------------------------------------------------------------
+# Navbar
+--------------------------------------------------------------*/
+#main-navbar{
+  background-color: #000352;
+}
+
+#main-navbar .nav-link{
+font-size: 1rem;
+font-weight: 400;
+}
+#main-navbar .nav-item{
+transition: all ease-out 0.15s;
+padding-left: 0.25rem;
+padding-right: 0.25rem;
+}
+#main-navbar .nav-item:hover{
+
+transition: all ease-out 0.15s;
+}
+#main-navbar .dropdown-menu{
+border: none;
+border-radius: 0;
+background-color: #000352;
+}
+#main-navbar .dropdown-menu .dropdown-item{
+color: #ffffff;
+font-size: 1rem;
+font-weight: 400;
+transition: all ease-out 0.15s;
+}
+#main-navbar .dropdown-menu .dropdown-item:hover{
+background-color: #ffffff;
+color:#000352;
+transition: all ease-out 0.15s;
+font-weight: 600;
+}
+
+@media (min-width: 768px){
+
+
+
+}
+@media (max-width:575px){
+
+
+
+}
+
+.border-top-primary {
+border-top: 0.25rem solid #4e73df !important;
+}
+
+.border-right-primary {
+border-right: 0.25rem solid #4e73df !important;
+}
+
+.border-left-primary {
+border-left: 0.25rem solid #4e73df !important;
+}
+
+.border-bottom-primary {
+border-bottom: 0.25rem solid #4e73df !important;
+}
+
+.border-top-secondary {
+border-top: 0.25rem solid #858796 !important;
+}
+
+.border-right-secondary {
+border-right: 0.25rem solid #858796 !important;
+}
+
+.border-left-secondary {
+border-left: 0.25rem solid #858796 !important;
+}
+
+.border-bottom-secondary {
+border-bottom: 0.25rem solid #858796 !important;
+}
+
+.border-top-success {
+border-top: 0.25rem solid #1cc88a !important;
+}
+
+.border-right-success {
+border-right: 0.25rem solid #1cc88a !important;
+}
+
+.border-left-success {
+  border-left: 0.25rem solid #1cc88a !important;
+}
+
+.border-bottom-success {
+  border-bottom: 0.25rem solid #1cc88a !important;
+}
+
+.border-top-info {
+  border-top: 0.25rem solid #36b9cc !important;
+}
+
+.border-right-info {
+  border-right: 0.25rem solid #36b9cc !important;
+}
+
+.border-left-info {
+  border-left: 0.25rem solid #36b9cc !important;
+}
+
+.border-bottom-info {
+  border-bottom: 0.25rem solid #36b9cc !important;
+}
+
+.border-top-warning {
+  border-top: 0.25rem solid #f6c23e !important;
+}
+
+.border-right-warning {
+  border-right: 0.25rem solid #f6c23e !important;
+}
+
+.border-left-warning {
+  border-left: 0.25rem solid #f6c23e !important;
+}
+
+.border-bottom-warning {
+  border-bottom: 0.25rem solid #f6c23e !important;
+}
+
+.border-top-danger {
+  border-top: 0.25rem solid #e74a3b !important;
+}
+
+.border-right-danger {
+  border-right: 0.25rem solid #e74a3b !important;
+}
+
+.border-left-danger {
+  border-left: 0.25rem solid #e74a3b !important;
+}
+
+.border-bottom-danger {
+  border-bottom: 0.25rem solid #e74a3b !important;
+}
+
+.border-top-light {
+  border-top: 0.25rem solid #f8f9fc !important;
+}
+
+.border-right-light {
+  border-right: 0.25rem solid #f8f9fc !important;
+}
+
+.border-left-light {
+  border-left: 0.25rem solid #f8f9fc !important;
+}
+
+.border-bottom-light {
+  border-bottom: 0.25rem solid #f8f9fc !important;
+}
+
+.border-top-dark {
+  border-top: 0.25rem solid #5a5c69 !important;
+}
+
+.border-right-dark {
+  border-right: 0.25rem solid #5a5c69 !important;
+}
+
+.border-left-dark {
+  border-left: 0.25rem solid #5a5c69 !important;
+}
+
+.border-bottom-dark {
+  border-bottom: 0.25rem solid #5a5c69 !important;
+}
+
+footer.sticky-footer {
+  padding: 2rem 0;
+  flex-shrink: 0;
+}
+
+footer.sticky-footer .copyright {
+  line-height: 1;
+  font-size: 0.8rem;
+}
+
+@media (min-width:768px){
+  .card-horizontal {
+display: flex;
+flex: 1 1 auto;
+  }
+}
+
+select.form-control{
+  padding: 0 .75rem;
+}
+
+.card-header{
+  font-size: 1.2rem;
+  font-weight: 600;
+}

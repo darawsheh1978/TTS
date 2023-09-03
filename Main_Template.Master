@@ -1,0 +1,471 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main_Template.master.vb" Inherits="TTsAccounting.Main_Template" %>
+
+ 
+ 
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-layout-mode="detached" data-topbar-color="dark" data-sidenav-color="light" data-sidenav-user="true">
+
+<head>
+   
+   <meta charset="utf-8" /> 
+    <title>True time solution- tts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta content="" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+   
+    <!-- Datatable css -->
+        
+    <link href="assets/vendor/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/vendor/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" type="text/css" />
+     <!-- Theme Config Js -->
+    <script src="assets/js/hyper-config.js"></script>
+    <!-- Icons css -->
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />   <!-- App css -->
+    
+  
+   <link href="assets/css/app-modern-rtl.min.css" rel="stylesheet" type="text/css" id="app-style" />
+ 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
+
+
+
+     
+
+
+  
+    <asp:ContentPlaceHolder ID="scripts_" runat="server">
+    </asp:ContentPlaceHolder>
+
+
+</head>
+
+    <body   >
+        <!-- Begin page -->
+
+      <div id="preloader">
+            <div id="status">
+                <div class="bouncing-loader"><div ></div><div ></div><div ></div></div>
+            </div>
+        </div>
+        <div class="wrapper overflow-visible">
+
+            
+            <!-- ========== Topbar Start ========== -->
+            <div class="navbar-custom topnav-navbar  ">
+                <div class="container-fluid detached-nav">
+
+                    <!-- Topbar Logo -->
+                    <div class="logo-topbar">
+                        <!-- Logo light -->
+                       
+                            <span class="logo-lg">
+                               
+                                 <asp:Image ID="CompanyLogo" runat="server" Width="60" Height="60" CssClass="img-fluid bg-white rounded avatar-sm" ImageUrl="~/Images/Logo.jpg" />
+                            </span>
+                            
+                           
+                       <span class="logo-sm">
+                               
+                                 <asp:Image ID="CompanyLogosm" runat="server" Width="60" Height="60" CssClass="img-fluid bg-white rounded avatar-sm" ImageUrl="~/Images/Logo.jpg" />
+                            </span>
+
+                       
+                        
+                    </div>
+
+                    <!-- Sidebar Menu Toggle Button -->
+                    <button class="button-toggle-menu">
+                        <i class="mdi mdi-menu"></i>
+ 
+                    </button>
+
+            
+                     <ul class="list-unstyled topbar-menu float-start mb-0">
+                        
+                       
+
+                        <li class="notification-list d-none d-sm-inline-block  text-center">
+                           
+                            <a class="nav-link noti-icon text-white" style="font-size:30px" data-bs-toggle="offcanvas" href="#">
+                               
+                                <asp:Label ID="lblCompanyName" runat="server" Text="النظام المالي"></asp:Label>    
+                           
+                            </a>
+                               
+                        </li>
+                         </ul>
+                   
+
+                    <ul class="list-unstyled topbar-menu float-end mb-0">
+                        
+                       
+
+<%--                        <li class="notification-list d-none d-sm-inline-block">
+                            <a class="nav-link" data-bs-toggle="offcanvas" href="#theme-settings-offcanvas">
+                                <i class="ri-settings-3-line noti-icon"></i>
+                            </a>
+                        </li>--%>
+
+                    <li class="notification-list   d-sm-inline-block">
+                            <a class="nav-link" href="viewNotifications" id="light-dark-mode1">
+                                <i class=" ri-notification-4-fill noti-icon"></i>
+                                <span class="badge bg-primary rounded-pill">
+                                    <asp:Label ID="lblPendings" runat="server" Text=""></asp:Label></span>
+                            </a>
+                        </li>
+
+                        <li class="notification-list   d-sm-inline-block">
+                            <a class="nav-link" href="javascript:void(0)" id="light-dark-mode">
+                                <i class="ri-moon-line noti-icon"></i>
+                            </a>
+                        </li>
+
+                       
+
+                        
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle nav-user arrow-none me-0" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
+                                aria-expanded="false">
+                                <span class="account-user-avatar"> 
+                                    <asp:Image ID="PictureEmp" runat="server" CssClass="rounded-circle" ImageUrl="~/assets/images/users/avatar-1.png" />
+                                </span>
+                                <span>
+                                      <span class="account-user-name"><% =Session("user")  %></span>
+                                      <span class="account-user-name"><% =Session("user_") %></span>
+                                     
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
+                                <!-- item-->
+                                
+ 
+                             
+
+                               
+
+                                <!-- item-->
+                                <a href="login.aspx" class="dropdown-item notify-item">
+                                    <i class="mdi mdi-logout me-1"></i>
+                                    <span>تسجبل الخروج</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                   
+                </div>
+
+               
+            </div>
+            <!-- ========== Topbar End ========== -->
+
+            <!-- ========== Left Sidebar Start ========== -->
+            <div class="leftside-menu">
+
+                <!-- Logo Light -->
+
+
+
+
+                <!-- Sidebar -left -->
+                <div class="h-100" id="leftside-menu-container" data-simplebar>
+                    <!-- Leftbar User -->
+
+
+                    <!--- Sidemenu -->
+                    <ul class="side-nav">
+
+
+                       <li class="side-nav-item">
+                            <a href="MyProfile" class="side-nav-link">
+                                <i class="ri-file-list-line"></i>
+
+                                <span> ملفات  </span>
+                            </a>
+                        </li>
+
+                         <li class="side-nav-item">
+                            <a href="References.aspx" class="side-nav-link">
+                                <i class="ri-file-list-fill"></i>
+
+                                <span> قائمة الذمم  </span>
+                            </a>
+                        </li>
+
+                         <li class="side-nav-item">
+                            <a href="ViewItems.aspx" class="side-nav-link">
+                                <i class="ri-file-list-fill"></i>
+
+                                <span> قائمة الاصناف  </span>
+                            </a>
+                        </li>
+
+
+                        <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarPages" aria-expanded="false" aria-controls="sidebarPages" class="side-nav-link">
+                                <i class="ri-file-copy-line"></i>
+                                <span>تقارير الذمم </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarPages">
+                                <ul class="side-nav-second-level">
+
+                                    <li>
+                                        <a href="FrmNewRequest"  >
+                                            <i class="ri-arrow-left-circle-line"></i>
+                                           <span>  كشف حساب ذمة</span>
+
+                                        </a>
+                                    </li>
+
+                                     <li>
+                                        <a href="NewLeaveRequest.aspx"  >
+                                            <i class="ri-arrow-left-circle-line"></i>
+                                           <span>كشف حساب ذمة مفصل</span></a>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="NewFrmAttendance" >
+                                            <i class="ri-arrow-left-circle-line"></i>
+                                           <span> ارصدة الذمم</span></a>
+                                    </li>
+
+                             
+                                    
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+                         <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarPages1" aria-expanded="false" aria-controls="sidebarPages1" class="side-nav-link">
+                                <i class="ri-file-copy-line"></i>
+                                <span>تقارير حسابات  </span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <div class="collapse" id="sidebarPages1">
+                                <ul class="side-nav-second-level">
+
+                                    <li>
+                                        <a href="leavebalance"  >
+                                              <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span> كشف حساب  </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="receivables"  >
+                                           <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span>ارصدة الحسابات  </span>
+                                        </a>
+                                    </li>
+
+                                      <li>
+                                        <a href="AttendanceRep" >
+                                           <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span>ميزان المراجعة  </span>
+                                        </a>
+                                    </li>
+
+                                      <li>
+                                        <a href="viewNotifications"  >
+                                           <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span>الشيكات  </span>
+                                        </a>
+                                    </li>
+                                  <li>
+                                        <a href="viewNotifications" >
+                                           <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span>قائمة الدخل  </span>
+                                        </a>
+                                    </li>
+                                                                          <li>
+                                        <a href="viewNotifications" >
+                                           <i class="ri-arrow-left-circle-line"></i>
+
+                                            <span>ميزانية عمومية  </span>
+                                        </a>
+                                    </li>
+
+
+                                    
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+           
+                      
+
+
+
+                    </ul>
+
+ 
+                    <!--- End Sidemenu -->
+
+                    <!-- Help Box -->
+
+                    <!-- end Help Box -->
+
+
+                </div>
+            </div>
+            <!-- ========== Left Sidebar End ========== -->
+
+            
+
+            <!-- ============================================================== -->
+            <!-- Start Page Content here -->
+            <!-- ============================================================== -->
+            <form runat="server" id="Index">
+              
+                
+
+            <div class="content-page">
+                <div class="content">
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+
+
+
+                                    <asp:ContentPlaceHolder ID="Title_" runat="server">
+                                    </asp:ContentPlaceHolder>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="alert alert-primary" role="alert" runat="server" id="_Filter">
+                            <asp:ContentPlaceHolder ID="Filters_" runat="server">
+                            </asp:ContentPlaceHolder>
+
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row mb-2">
+                                            <div class="col-sm">
+                                                <div runat="server" id="_Body">
+                                                    <asp:ContentPlaceHolder ID="Body_" runat="server">
+                                                    </asp:ContentPlaceHolder>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                    <!-- end card-body-->
+                                </div>
+                                <!-- end card-->
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                    </div>
+                    <!-- container -->
+
+
+
+                    <!-- Footer Start -->
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+
+                                <div class="col-12" align="left">
+                                    <a href="https://truetime.ps/en/home/" target="_blank">
+                                        <script>document.write(new Date().getFullYear())</script>
+                                        <img width="24" class="m-1 rounded" src="Images/Logo.jpg" />
+                                    </a>Developed By  
+                            
+                            
+                                   
+                            
+                                
+                                </div>
+
+  
+
+                            </div>
+
+                           
+
+
+                        </div>
+
+                    </footer>
+                    <!-- end Footer -->
+                </div>
+            </div>
+
+                  
+
+                </form>
+
+            <!-- ============================================================== -->
+            <!-- End Page content -->
+            <!-- ============================================================== -->
+
+        </div>
+  
+
+
+           <script src="assets/js/vendor.min.js"></script>
+       <%--<script src="assets/js/pages/demo.datatable-init.js"></script>--%>
+  <script src="assets/js/app.min.js"></script>
+        <!-- Datatables js -->
+      <%--  <script src="assets/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="assets/vendor/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+        <script src="assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+        <script src="assets/vendor/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
+        <script src="assets/vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+        <script src="assets/vendor/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="assets/vendor/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+        <script src="assets/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="assets/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="assets/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="assets/vendor/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="assets/vendor/datatables.net-select/js/dataTables.select.min.js"></script>--%>
+
+        <!-- Datatable Demo Aapp js -->
+ 
+
+        <!-- App js -->
+ 
+
+    
+
+    </body>
+</html>
