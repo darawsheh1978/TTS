@@ -18,7 +18,7 @@ Public Class Utility
         ' If Con.State = ConnectionState.Open Then Con.Close()
         Con.ConnectionString = ConStr
         'ghgh
-
+        ' edited by mazen 
         Con.Open()
     End Sub
     Public Function GetDataSet(ByVal Qry As String) As Data.DataSet
